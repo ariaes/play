@@ -13,5 +13,6 @@ test.describe("navigation", () => {
 
     const new_todo = await page.$('.new-todo');
     await new_todo?.type('todo1');
+    await page.keyboard.press('Enter');
   });
 });
