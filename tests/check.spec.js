@@ -1,14 +1,15 @@
 // @ts-check
-const { test, webkit } = require("@playwright/test");
+const { test, expect } = require("@playwright/test");
 
 test.describe("navigation", () => {
-
-    test("main navigation", async () => {
-        const browser = await webkit.launch({ headless: false, slowMo: 300 });
-        const page = await browser.newPage()
-
+    test.beforeEach(async ({ page }) => {
         // Go to the starting url before each test.
         await page.goto("https://www.w3schools.com/howto/howto_css_custom_checkbox.asp");
+      });
+    
+      test("main navigation", async ({ page }) => {
+        // Assertions use the expect API.
+        await expect(page).toHaveURL("https://www.w3schools.com/howto/howto_css_custom_checkbox.asp");
 
         // Check the second checkbox
         const checks = await page.$$('#main  div :nth-child(1) > input[type="checkbox"]');
@@ -21,6 +22,5 @@ test.describe("navigation", () => {
 
         await radios[1].check()
 
-        await browser.close();
     });
 });
