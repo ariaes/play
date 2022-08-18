@@ -8,6 +8,8 @@ env:
   APPLITOOLS_API_KEY: ${{secrets.APPLITOOLS_API_KEY}}    
 jobs:
   test:
+    - name: Run environment variables
+    run: env
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
