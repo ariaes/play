@@ -1,7 +1,5 @@
 name: Playwright Tests
 on:
-  commit:
-    branches: [ jest, master ]
   push:
     branches: [ jest, master ]
   pull_request:
