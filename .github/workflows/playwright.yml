@@ -4,6 +4,8 @@ on:
     branches: [ visualTesting, master ]
   pull_request:
     branches: [ visualTesting, master ]
+env:
+  APPLITOOLS_API_KEY: ${{secrets.APPLITOOLS_API_KEY}}    
 jobs:
   test:
     timeout-minutes: 60
@@ -25,3 +27,4 @@ jobs:
         name: playwright-report
         path: playwright-report/
         retention-days: 30
+    
