@@ -12,7 +12,7 @@ describe(`UI tests for bookstore using playwright`, () => {
 
     // runs before all tests
     beforeAll(async() =>{
-      browser = await chromium.launch({headless:false, slowMo:300});
+      browser = await chromium.launch();
       context = await browser.newContext();
       page = await context.newPage();
       await page.goto('https://demoqa.com/books');
