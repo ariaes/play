@@ -21,8 +21,8 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: |
-        export APPLITOOL_API_KEY=${{ secrets.APPLITOOL_API_KEY }}
-        echo $APPLITOOL_API_KEY
+        export APPLITOOLS_API_KEY=${{ secrets.APPLITOOLS_API_KEY }}
+        echo $APPLITOOLS_API_KEY
         npm test
     - uses: actions/upload-artifact@v2
       if: always()
