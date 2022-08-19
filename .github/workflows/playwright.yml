@@ -16,13 +16,13 @@ jobs:
       with:
         node-version: '14.x'
     - name: Install dependencies
-      run: |
-        export APPLITOOL_API_KEY=$APPLITOOL_API_KEY 
-        npm ci
+      run: npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
-      run: npm test
+      run: |
+        export APPLITOOL_API_KEY=$APPLITOOL_API_KEY  
+        npm test
     - uses: actions/upload-artifact@v2
       if: always()
       with:
