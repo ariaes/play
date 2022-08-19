@@ -4,10 +4,10 @@ on:
     branches: [ visualTesting, master ]
   pull_request:
     branches: [ visualTesting, master ]
-env:
-  export APPLITOOL_API_KEY=$APPLITOOL_API_KEY
 jobs:
   test:
+    env:
+    export APPLITOOL_API_KEY=$APPLITOOL_API_KEY
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
