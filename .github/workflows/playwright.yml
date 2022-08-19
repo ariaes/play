@@ -7,7 +7,7 @@ on:
 jobs:
   test:
     env:
-    export APPLITOOL_API_KEY=$APPLITOOL_API_KEY
+    export APPLITOOL_API_KEY: $APPLITOOL_API_KEY
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
