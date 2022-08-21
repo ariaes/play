@@ -3,7 +3,7 @@ const { ClassicRunner, Eyes, Target, RectangleSize } = require('@applitools/eyes
 
 describe(`UI tests for dynamic content using playwright and applitools`, () => {
     // jest timeout is by default 5000ms to run tests, with this we override this value
-    jest.setTimeout(30000);
+    jest.setTimeout(50000);
 
     let browser = null;
     let page = null;
