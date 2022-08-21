@@ -17,7 +17,7 @@ jobs:
         node-version: '14.x'
     - name: Install dependencies
       run: |
-        export APPLITOOL_API_KEY=$APPLITOOL_API_KEY 
+        export TEST=$APPLITOOL_API_KEY 
         npm ci
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
